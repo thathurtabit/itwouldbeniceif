@@ -1,0 +1,59 @@
+.add-quote__open--lg,
+.add-quote__close {
+	position: fixed;
+	top: 84px;
+	right: 50%;
+	margin-right: -15px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	z-index: $zindex-tooltip;
+	background-color: $brand-primary;
+	color: $body-bg;
+	border-radius: 100%;
+	padding: 0;
+
+	@include media-breakpoint-up(md) {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		top: 30px;
+		right: 30px;
+		margin-right: 0;	
+	}
+
+	@include media-breakpoint-up(md) {
+		top: 55px;
+		right: 50px;
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: lighten($brand-primary, 10%);
+	}
+}
+
+.add-quote__open--lg {
+	animation: shadow-pulse 2s ease-in-out infinite;
+	transform-origin: 50% 50%;
+}
+
+// Animation keyframes
+@keyframes shadow-pulse {
+    0% {
+    box-shadow: 0 0 0 0 rgba(104,56,174, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(104,56,174, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(104,56,174, 0);
+  }
+}
+
+
+.add-quote__close {
+	background-color: $body-bg; 
+	color: $brand-primary;
+}

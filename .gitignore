@@ -2,6 +2,13 @@
 Thumbs.db
 ehthumbs.db
 
+bower_components
+node_modules
+npm-debug.log
+yarn-error.log
+vendor
+dist
+
 # Folder config file
 Desktop.ini
 

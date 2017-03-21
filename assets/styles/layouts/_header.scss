@@ -1,0 +1,175 @@
+.navbar {
+	height: $navbar-height;
+	line-height: $navbar-height;
+	padding: 0;
+	background-color: $body-bg;
+	flex-direction: row;	
+	border-top: 3px solid $brand-primary;
+	//border-bottom: 1px solid rgba(0,0,0,0.05);
+
+	@include media-breakpoint-up(lg) {
+		height: $navbar-height + 50;
+		line-height: $navbar-height + 50;
+	}	
+}
+
+.navbar-brand,
+#reply-title {
+	font-size: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	position: relative;
+
+	&::before,
+	&::after {
+		transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+		transition-delay: 1.5s;
+		opacity: 0;
+		transform: translate3d(0, 10px, 0);
+		font-family: "FontAwesome";
+		content: $fa-var-lightbulb-o;
+		position: absolute;
+	    top: 25px;
+	    font-size: 13px;
+	    height: 10px;
+	    line-height: 1;
+	    left: 50%;
+	    color: $gray-light;
+	    margin-left: -74px;
+    
+
+	    @include media-breakpoint-up(md) {
+			margin-left: -86px;
+	    }
+
+	    @include media-breakpoint-up(lg) {
+	    	margin-left: -98px;
+	    	top: 48px;
+	    }
+
+	    @include media-breakpoint-up(xl) {
+	    	margin-left: -110px;
+	    }
+
+	    // When page-ready
+	    .page-ready & {
+	    	opacity: 1;
+	    	transform: translate3d(0,0,0);
+	    }
+
+	}
+
+	&::after {
+		color: $yellow;
+		content: "";
+		background-color: $yellow;
+		z-index: -1;
+		width: 5px;
+		height: 7px;
+		top: 26px;
+		border-radius: 100%;
+		animation: bulb-flicker 3s linear forwards;
+		animation-delay: 5s;
+		box-shadow: 0 0 15px rgba(255,213,0,0.75);
+		margin-left: -73px;
+		
+
+	    @include media-breakpoint-up(md) {
+	    	margin-left: -85px;
+	    }
+
+	    @include media-breakpoint-up(lg) {
+	    	margin-left: -97px;
+	    	top: 49px;
+	    }
+
+	    @include media-breakpoint-up(xl) {
+	    	margin-left: -109px;
+	    }
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: 35px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 40px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 45px;
+	}
+}
+
+
+// Animation keyframes
+@keyframes bulb-flicker {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 0;
+  }
+  19% {
+    opacity: 0.75;
+  }
+  22% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 1;
+    //box-shadow: 0 0 0 5px rgba(255,213,0,0);
+  }
+  70% {
+    opacity: 0;
+  }
+  72% {
+    opacity: 0.5;
+  }
+  72% {
+    opacity: 1;
+    //box-shadow: 0 0 15px rgba(255,213,0,1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+// CHANGE UP THE COLOURS IN REPLY FORM
+#reply-title {
+	&::before {
+		color: $gray-dark;
+	}
+	&:after {
+		opacity: 0.75;
+	}
+}
+
+
+.navbar-nav {
+	position: fixed; 
+	left: 0;
+	top: 0;
+	height: $navbar-height;
+}
+
+
+.navbar-nav .nav-link {
+	display: inline-block;
+	padding: 0 10px 0 20px;
+
+	@include media-breakpoint-up(sm) {
+		padding: 0  20px 0 40px;
+	}
+}

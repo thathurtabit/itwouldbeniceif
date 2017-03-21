@@ -1,0 +1,21 @@
+body {
+	background: $body-bg;
+	background-size: 30%;
+}
+
+a:link, a:active, a:visited, a:hover {
+	text-decoration: none;
+}
+
+.main {
+	min-height: 100vh;
+}
+
+#loading-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: $brand-primary;
+}

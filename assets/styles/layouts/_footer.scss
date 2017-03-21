@@ -1,0 +1,20 @@
+footer .site-by {
+	display: none;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+
+	// SHOW ONLY ON LARGER SCREENS
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
+}
+
+footer #horse {
+	fill: lighten($brand-primary, 40%);
+	width: 30px; 
+
+	&:hover {
+		fill: $brand-primary;
+	}
+}

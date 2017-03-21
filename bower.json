@@ -1,0 +1,42 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
+    "jquery-form-validator": "^2.3.54",
+    "font-awesome": "fontawesome#^4.7.0",
+    "slick-carousel": "^1.6.0",
+    "webfontloader": "^1.6.27",
+    "wheel-indicator": "^1.1.4"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "scss/_variables.scss",
+        "scss/_mixins.scss",
+        "scss/_normalize.scss",
+        "scss/_print.scss",
+        "scss/_reboot.scss",
+        "scss/_type.scss",
+        "scss/_grid.scss",
+        "scss/_forms.scss",
+        "scss/_buttons.scss",
+        "scss/_input-group.scss",
+        "scss/_custom-forms.scss",
+        "scss/_nav.scss",
+        "scss/_navbar.scss",
+        "scss/_list-group.scss",
+        "scss/_tooltip.scss",
+        "scss/_alert.scss",
+        "scss/_utilities.scss",
+        "js/dist/util.js",
+        "js/dist/tooltip.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,189 @@
+// Search form
+.search-form {
+  @extend .form-inline;
+}
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field {
+  @extend .form-control;
+}
+.search-form .search-submit,
+#respond .submit {
+  @extend .btn;
+  @extend .btn-secondary;
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: $brand-primary;
+  background-color: $body-bg;
+  border: 0;
+  outline: none;
+
+	&:hover {
+		cursor: pointer;
+		background-color: lighten($brand-primary, 10%);
+	}
+}
+
+
+.comment-form input[type=email], .comment-form input[type=text], .comment-form input[type=url], .comment-form textarea, .form-control, .search-form .search-field {
+    display: block;
+    font-family: $font-family-sans-serif;
+    background-color: $body-bg;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    box-shadow: none;
+    border: 0;
+}
+
+// When in error
+input[type=email], input[type=text], input[type=url], textarea, .form-control, .search-field {
+	.has-error & {
+		border: 0;
+    	box-shadow: inset 5px 0 0 $red;
+    }
+}
+
+
+#reply-title {
+	@extend .navbar;
+	@extend .fixed-top;
+	background-color: $brand-primary !important;
+	color: $body-bg !important;
+	text-align: center;
+	display: block;
+	border-top: 3px solid $white!important;
+	border-bottom: 1px solid rgba(255,255,255,0.05)!important;
+}
+
+#respond {
+	transition: opacity $transition-time ease-in-out;
+	display: none; // Hide by default, use JS to bring it to the DOM
+	opacity: 0;
+	position: fixed;
+	background-color: $brand-primary;
+	color: $body-bg;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $zindex-tooltip + 1;
+	overflow-y: auto;
+
+	&.open {
+		opacity: 1;
+	}
+}
+
+
+#form-comment {
+	max-width: 1200px;
+	padding: 40px 20px;	
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media-breakpoint-up(md) {
+		padding: 50px 40px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 50px 50px;
+		//margin-top: 50px;	
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding: 50px 90px;	
+	}
+}
+
+#form-comment #comment {
+	height: 300px;
+	text-align: center;
+	padding: 40px 30px;
+	font-size: 7vw;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 6vw;	
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: 5vw;	
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 4vw;	
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 3vw;
+	}
+}
+
+
+.comment-respond .caveat {
+	margin-left: 5px;
+	color: rgba(255,255,255,0.5);
+}
+
+
+#form-comment p {
+	position: relative;
+	margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.form-submit {
+	text-align: right;
+}
+
+#form-comment .help-block {
+	font-family: $font-family-sans-serif-alt;
+	font-size: 9px;
+	text-transform: uppercase;
+	position: absolute;
+	left: 5px;
+	bottom: 3px;
+	color: $body-color; 
+}
+
+#form-comment .has-error .help-block {
+	left: 15px;
+	color: $red;
+}
+
+
+// For the validation info on textarea
+#form-comment .comment-input .help-block {
+	left: 20px;
+}
+
+// When in error
+#form-comment .comment-input.has-error .help-block {
+	left: 30px;
+}
+
+#comment-wrap {
+	position: relative;
+
+	#maxlength-p {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		background-color: $input-bg;
+		color: lighten($body-color, 20%);
+		width: 130px;
+	    text-align: center;
+	    margin-left: -65px;
+	}
+}
+
+#form-comment .input-info {
+	display: block;
+	font-size: 13px;
+	margin-top: 10px;
+	color: lighten($brand-primary, 30%);
+}
