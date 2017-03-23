@@ -41,6 +41,7 @@ ol.comment-list {
 	padding: 100px 0 50px;
 	font-size: 9vw;
 	color: $purple;
+	font-weight: 400;
 
 	@include media-breakpoint-up(sm) {
 		font-size: 8vw;		
@@ -140,7 +141,7 @@ ol.comment-list {
 
 .cld-prevent,
 .cld-prevent:hover {
-	color: lighten($gray-light, 40%);
+	color: lighten($body-color, 40%);
 	cursor: not-allowed;
 }
 

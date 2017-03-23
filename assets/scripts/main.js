@@ -22,15 +22,14 @@
 
         // LOAD WEB FONTS
         WebFont.load({
-          google: {
-            families: ['Quicksand', 'Open Sans']
+          typekit: {
+            id: "gxm2nom"
           },
           active: function () {
               
-              // FIRE FUNCTIONS AFTER FONT HAS LOADED
-              $('body').addClass('page-ready');
-              $('#loading-cover').delay(50).queue(function(next) { $(this).addClass("hello-app"); next(); }).delay(50).fadeOut('250',function(){$(this).remove();});
-              
+            // FIRE FUNCTIONS AFTER FONT HAS LOADED
+            $('body').addClass('page-ready');
+            $('#loading-cover').delay(50).queue(function(next) { $(this).addClass("hello-app"); next(); }).delay(50).fadeOut('250',function(){$(this).remove();});              
           }
         });
 
@@ -72,16 +71,38 @@
 
         });
 
+        // Initial value
+        var i = 0;
+
+        function changeUpBG() {  
+          i++;
+          var body = $('body');
+
+          //Remove all classes by default
+          body.removeClass(function (index, css) {
+              return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
+          });
+
+          if (i < 11) {
+            body.addClass("bg-" + i);
+          } else {
+            i = 1;
+            body.addClass("bg-" + i);
+          }
+        }
+
+
         var mySlick = document.querySelector('.comment-list');
         var indicator = new WheelIndicator({
           elem: document.querySelector('.comment-list'),
           callback: function(e){
             if (e.direction === "down") {
 
-              if($(".comment-list").slick('slickCurrentSlide') === $(".comment-list").find('.slide').length - 1) {
+              if($(".comment-list").slick('slickCurrentSlide') === $(".comment-list").find('.slick-slide').length - 1) {
                 return;
               } else {
                 $(".comment-list").slick('slickNext');
+                changeUpBG();
               }
               
 
@@ -89,16 +110,22 @@
 
               if($(".comment-list").slick('slickCurrentSlide') === 0) {
                 return;
+              } else {
+                $(".comment-list").slick('slickPrev');
+                changeUpBG();
               }
-              
-              $(".comment-list").slick('slickPrev');
             }
           }
         });
-
         //The method call
-        indicator.getOption('preventMouse'); // true        
-      
+        indicator.getOption('preventMouse'); // true
+
+
+        // On before slide change
+        $('.comment-list').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          changeUpBG();
+        });  
+        
 
         // SHOW & HIDE SEARCH BOX
         $(".quote-form-open-close").click(function(){
@@ -110,6 +137,10 @@
           }
           
         });
+
+
+        // DO THIS ON PAGE LOAD
+        changeUpBG();
 
 
       },

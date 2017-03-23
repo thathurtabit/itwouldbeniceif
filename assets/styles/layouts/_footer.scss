@@ -11,10 +11,10 @@ footer .site-by {
 }
 
 footer #horse {
-	fill: lighten($brand-primary, 40%);
+	fill: $brand-primary; 
 	width: 30px; 
 
 	&:hover {
-		fill: $brand-primary;
+		fill: lighten($brand-primary, 10%);
 	}
 }

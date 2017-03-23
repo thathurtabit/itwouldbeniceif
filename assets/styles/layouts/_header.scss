@@ -20,6 +20,7 @@
 	margin-right: auto;
 	padding: 0;
 	position: relative;
+	font-weight: 300;
 
 	&::before,
 	&::after {
@@ -36,20 +37,20 @@
 	    line-height: 1;
 	    left: 50%;
 	    color: $gray-light;
-	    margin-left: -74px;
+	    margin-left: -71px;
     
 
 	    @include media-breakpoint-up(md) {
-			margin-left: -86px;
+			margin-left: -83px;
 	    }
 
 	    @include media-breakpoint-up(lg) {
-	    	margin-left: -98px;
+	    	margin-left: -93px;
 	    	top: 48px;
 	    }
 
 	    @include media-breakpoint-up(xl) {
-	    	margin-left: -110px;
+	    	margin-left: -104px;
 	    }
 
 	    // When page-ready
@@ -72,20 +73,20 @@
 		animation: bulb-flicker 3s linear forwards;
 		animation-delay: 5s;
 		box-shadow: 0 0 15px rgba(255,213,0,0.75);
-		margin-left: -73px;
+		margin-left: -70px;
 		
 
 	    @include media-breakpoint-up(md) {
-	    	margin-left: -85px;
+	    	margin-left: -82px;
 	    }
 
 	    @include media-breakpoint-up(lg) {
-	    	margin-left: -97px;
+	    	margin-left: -92px;
 	    	top: 49px;
 	    }
 
 	    @include media-breakpoint-up(xl) {
-	    	margin-left: -109px;
+	    	margin-left: -103px;
 	    }
 	}
 
