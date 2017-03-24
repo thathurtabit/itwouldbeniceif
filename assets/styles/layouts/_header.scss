@@ -5,12 +5,22 @@
 	background-color: $body-bg;
 	flex-direction: row;	
 	border-top: 3px solid $brand-primary;
-	//border-bottom: 1px solid rgba(0,0,0,0.05);
 
 	@include media-breakpoint-up(lg) {
 		height: $navbar-height + 50;
 		line-height: $navbar-height + 50;
-	}	
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(255,255,255,0.1);
+		z-index: 1;
+	}
 }
 
 .navbar-brand,
@@ -21,6 +31,7 @@
 	padding: 0;
 	position: relative;
 	font-weight: 300;
+	z-index: 2;
 
 	&::before,
 	&::after {

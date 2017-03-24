@@ -41,15 +41,16 @@ ol.comment-list {
 	padding: 100px 0 50px;
 	font-size: 9vw;
 	color: $purple;
-	font-weight: 400;
+	font-weight: 300;
 
 	@include media-breakpoint-up(sm) {
 		font-size: 8vw;		
-		padding: 150px 0 100px;
+		padding: 150px 20px 100px;
 	}
 
 	@include media-breakpoint-up(md) {
 		font-size: 7vw;
+		padding: 150px 40px 100px;
 	}
 
 	@include media-breakpoint-up(lg) {
