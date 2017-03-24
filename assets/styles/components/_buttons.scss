@@ -13,6 +13,7 @@
 	color: $body-bg;
 	border-radius: 100%;
 	padding: 0;
+	font-weight: 300;
 
 	@include media-breakpoint-up(md) {
 		width: 40px;

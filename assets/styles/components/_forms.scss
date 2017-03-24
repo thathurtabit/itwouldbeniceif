@@ -14,7 +14,6 @@
   @extend .btn;
   @extend .btn-secondary;
   font-family: $font-family-sans-serif;
-  font-weight: bold;
   font-size: 25px;
   color: $brand-primary;
   background-color: $body-bg;
@@ -37,6 +36,7 @@
     line-height: 1.25;
     box-shadow: none;
     border: 0;
+    font-weight: 300;
 }
 
 // When in error

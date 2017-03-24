@@ -1,6 +1,7 @@
 body {
 	transition: background-color $transition-time ease-in-out;
 	background-color: $body-bg;
+	font-weight: 300;
 
 	&.bg-1 {
 		background-color: $body-bg;
