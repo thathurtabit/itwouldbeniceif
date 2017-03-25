@@ -106,6 +106,7 @@ ol.comment-list {
 	font-size: 12px;
 	transition-delay: 0.75s; // Bring in a little later
 	color: lighten($body-color, 20%);
+	font-weight: 400;
 
 	img {
 		display: inline-block;
