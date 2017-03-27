@@ -12,7 +12,6 @@ if (post_password_required()) {
       /* Loop through and list the comments. Tell wp_list_comments()
        * to use qwota_comment() to format the comments.
        */
-      //wp_list_comments( array( 'callback' => 'qwota_comment' ) ); - working, but without reverse order
       wp_list_comments( array( 'callback' => 'iwbni_comment' ) )
       
     ?>

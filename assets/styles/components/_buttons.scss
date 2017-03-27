@@ -1,5 +1,6 @@
 .add-quote__open--lg,
-.add-quote__close {
+.add-quote__close,
+.nav-link {
 	position: fixed;
 	top: 84px;
 	right: 50%;
@@ -8,7 +9,7 @@
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
-	z-index: $zindex-tooltip;
+	z-index: $zindex-tooltip + 1;
 	background-color: $brand-primary;
 	color: $white;
 	border-radius: 100%;
@@ -26,13 +27,28 @@
 
 	@include media-breakpoint-up(lg) {
 		top: 55px;
-		//right: 50px;
 		left: 103px;
 	}
 
 	&:hover {
 		cursor: pointer;
 		background-color: lighten($brand-primary, 10%);
+	}
+}
+
+
+.nav-link {
+	top: 200px;
+
+	@include media-breakpoint-up(md) {
+		top: 30px;
+		left: 30px;
+		right: inherit;
+	}
+
+	@include media-breakpoint-up(lg) {
+		top: 55px;
+		left: 103px;
 	}
 }
 

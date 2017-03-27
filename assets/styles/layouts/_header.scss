@@ -6,6 +6,7 @@
 	background-color: $body-bg;
 	flex-direction: row;
 	background-color: $white;
+	text-align: center;
 
 	@include media-breakpoint-up(lg) {
 		position: fixed;
@@ -20,18 +21,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
-
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		border-bottom: 1px solid rgba(255,255,255,0.1);
-		z-index: 1;
 	}
 }
 
@@ -60,8 +49,7 @@
 	padding: 0;
 }
 
-.navbar-brand,
-#reply-title {
+.navbar-brand {
 	font-size: 30px;
 	font-weight: 700;
 	z-index: 2;
@@ -73,8 +61,9 @@
 
 	@include media-breakpoint-up(lg) {
 		font-size: 40px;
-		width: $navbar-width;
 		padding: 10px;
+		padding-left: 35px;
+		padding-right: 35px;
 		white-space: normal;
 	}
 
@@ -217,12 +206,3 @@
 	z-index: 5;
 }
 
-
-.navbar-nav .nav-link {
-	display: inline-block;
-	padding: 0 10px 0 20px;
-
-	@include media-breakpoint-up(sm) {
-		padding: 0  20px 0 40px;
-	}
-}

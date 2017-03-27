@@ -112,6 +112,7 @@ add_filter( 'query_vars', 'add_custom_query_var');
       // Template Options
       'comment_field' =>
       '<div id="comment-wrap" class="comment-form row">' .
+      '<h4 class="text-center">Add your suggestion</h4>'.
       '<p class="comment-input col-lg-12">' .
      
             '<textarea id="comment" class="comment-enter" name="comment" data-validation="required" data-validation-length="1-80" data-validation="alphanumeric" data-validation-allowing="-_.!?" cols="" rows="" aria-required="true" placeholder="It would be nice if..." autocomplete="off" required></textarea>' .                         
@@ -124,11 +125,11 @@ add_filter( 'query_vars', 'add_custom_query_var');
       // Include Fields Array
       'fields' => apply_filters( 'comment_form_default_fields', $fields ),
       
-      'must_log_in' =>
-      '<p class="must-log-in">' .
-      sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
-      wp_login_url( apply_filters( 'the_permalink', get_permalink($post_id) ) ) ) .
-      '</p>',
+      // 'must_log_in' =>
+      // '<p class="must-log-in">' .
+      // sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
+      // wp_login_url( apply_filters( 'the_permalink', get_permalink($post_id) ) ) ) .
+      // '</p>',
       
       'logged_in_as' =>
       '<p class="logged-in-as">' .
@@ -136,6 +137,7 @@ add_filter( 'query_vars', 'add_custom_query_var');
       admin_url('profile.php'), $user_identity, wp_logout_url( apply_filters('the_permalink', get_permalink($post_id)) ) ) .
       '</p>',
       
+
       'comment_notes_before' =>
       '<button class="btn quote-form-open-close add-quote__close"><span class="sr-only">Close</span><span class="fa fa-times"></span></button>'
       ,
@@ -147,7 +149,7 @@ add_filter( 'query_vars', 'add_custom_query_var');
       'id_form' => 'form-comment',
       'class_form' => 'comment-form-wrap',
       'id_submit' => 'submit',
-      'title_reply' => __( 'It would be nice if...' ),
+      'title_reply' => '<div class="navbar-brand">It would be nice if...</div>',
       'label_submit' => __( 'Add' ),
     );
 
