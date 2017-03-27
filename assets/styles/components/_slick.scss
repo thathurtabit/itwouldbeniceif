@@ -79,7 +79,7 @@ $slick-opacity-not-active: 0.25 !default;
     font-size: 0px;
     cursor: pointer;
     background: $brand-primary;
-    color: $body-bg;
+    color: $white;
     bottom: 30px;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -92,6 +92,8 @@ $slick-opacity-not-active: 0.25 !default;
     @include media-breakpoint-up(sm) {
         //bottom: 50px;
     }
+
+
 
     &:hover, &:focus {
         outline: none;
@@ -126,6 +128,11 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev {
     left: 50%;
+
+    @include media-breakpoint-up(lg) {
+        left: -182px;
+    }
+
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -140,6 +147,11 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-next {
     right: 50%;
+
+    @include media-breakpoint-up(lg) {
+        left: -135px;
+    }
+
     [dir="rtl"] & {
         left: -25px;
         right: auto;

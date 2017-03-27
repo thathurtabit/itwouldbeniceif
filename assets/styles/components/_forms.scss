@@ -30,7 +30,7 @@
 .comment-form input[type=email], .comment-form input[type=text], .comment-form input[type=url], .comment-form textarea, .form-control, .search-form .search-field {
     display: block;
     font-family: $font-family-sans-serif;
-    background-color: $body-bg;
+    background-color: $white;
     width: 100%;
     font-size: 1.4rem;
     line-height: 1.25;
@@ -47,16 +47,8 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
     }
 }
 
-
 #reply-title {
-	@extend .navbar;
-	@extend .fixed-top;
-	background-color: $brand-primary !important;
-	color: $body-bg !important;
-	text-align: center;
-	display: block;
-	border-top: 3px solid $white!important;
-	border-bottom: 1px solid rgba(255,255,255,0.05)!important;
+	z-index: $zindex-tooltip + 2;
 }
 
 #respond {
@@ -65,7 +57,7 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 	opacity: 0;
 	position: fixed;
 	background-color: $brand-primary;
-	color: $body-bg;
+	color: $white;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -75,6 +67,11 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 
 	&.open {
 		opacity: 1;
+	}
+
+	@include media-breakpoint-up(lg) {
+		left: $navbar-width - 15;
+		overflow-y: visible;
 	}
 }
 
@@ -92,7 +89,12 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 
 	@include media-breakpoint-up(lg) {
 		padding: 50px 50px;
-		//margin-top: 50px;	
+		position: relative;		
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	@include media-breakpoint-up(xl) {
@@ -166,8 +168,15 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 	left: 30px;
 }
 
+#comment-wrap,
+.comment-form {
+	width: 100%;
+    max-width: 800px;
+}
+
 #comment-wrap {
 	position: relative;
+	
 
 	#maxlength-p {
 		position: absolute;

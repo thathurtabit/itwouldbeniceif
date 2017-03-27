@@ -35,72 +35,6 @@ body {
 	}
 }
 
-.navbar {
-	transition: background-color $transition-time ease-in-out;
-
-	// .bg-5 & {
-	// 	background-color: $body-bg;
-	// }
-	// .bg-6 & {
-	// 	background-color: adjust-hue($body-bg, 36%);
-	// }
-	// .bg-7 & {
-	// 	background-color: adjust-hue($body-bg, 72%);
-	// }
-	// .bg-8 & {
-	// 	background-color: adjust-hue($body-bg, 108%);
-	// }
-	// .bg-9 & {
-	// 	background-color: adjust-hue($body-bg, 144%);
-	// }
-	// .bg-10 & {
-	// 	background-color: adjust-hue($body-bg, 180%);
-	// }
-	// .bg-1 & {
-	// 	background-color: adjust-hue($body-bg, 216%);
-	// }
-	// .bg-2 & {
-	// 	background-color: adjust-hue($body-bg, 252%);
-	// }
-	// .bg-3 & {
-	// 	background-color: adjust-hue($body-bg, 288%);
-	// }
-	// .bg-4 & {
-	// 	background-color: adjust-hue($body-bg, 324%);
-	// }
-
-
-	.bg-1 & {
-		background-color: $body-bg;
-	}
-	.bg-2 & {
-		background-color: adjust-hue($body-bg, 36%);
-	}
-	.bg-3 & {
-		background-color: adjust-hue($body-bg, 72%);
-	}
-	.bg-4 & {
-		background-color: adjust-hue($body-bg, 108%);
-	}
-	.bg-5 & {
-		background-color: adjust-hue($body-bg, 144%);
-	}
-	.bg-6 & {
-		background-color: adjust-hue($body-bg, 180%);
-	}
-	.bg-7 & {
-		background-color: adjust-hue($body-bg, 216%);
-	}
-	.bg-8 & {
-		background-color: adjust-hue($body-bg, 252%);
-	}
-	.bg-9 & {
-		background-color: adjust-hue($body-bg, 288%);
-	}
-	.bg-10 & {
-		background-color: adjust-hue($body-bg, 324%);
-	}
-}
 
 .navbar,
 .wrap {
@@ -111,6 +45,13 @@ body {
 		opacity: 1;
 	}
 }
+
+.content {
+	@include media-breakpoint-up(lg) { 
+		margin-left: $navbar-width - 15;
+	}
+}
+
 
 
 a:link, a:active, a:visited, a:hover {

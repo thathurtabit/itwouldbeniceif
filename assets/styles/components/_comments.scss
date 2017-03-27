@@ -37,11 +37,22 @@ ol.comment-list {
 	}
 }
 
+.suggestion-inner {
+	transition: opacity $transition-time ease-in-out;
+	transition-delay: $transition-time;
+	opacity: 0;
+
+	.slick-active & {
+		opacity: 1;
+	}
+}
+
 .suggestion-text {
 	padding: 100px 0 50px;
 	font-size: 9vw;
 	color: $purple;
 	font-weight: 300;
+	font-family: $font-family-sans-serif-alt;
 
 	@include media-breakpoint-up(sm) {
 		font-size: 8vw;		
@@ -62,6 +73,11 @@ ol.comment-list {
 	}
 }
 
+.suggestion-moderation {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 // On inner pages, when the page loads, transition
 
 .suggestion-text,
@@ -78,13 +94,6 @@ ol.comment-list {
 	}
 }
 
-.suggestion-date {
-	display: none;
-	
-	@include media-breakpoint-up(sm) {
-		display: block;
-	}
-}
 
 .added-by {
 	display: block;
@@ -99,14 +108,20 @@ ol.comment-list {
 	padding: 3px 15px;
     background-color: rgba(0,0,0,.05);
     border-radius: 30px;
+    line-height: 20px;
 }
 
 .suggestion-contributor-wrap {
-	font-family: $font-family-sans-serif-alt;
+	font-family: $font-family-sans-serif;
 	font-size: 12px;
 	transition-delay: 0.75s; // Bring in a little later
 	color: lighten($body-color, 20%);
 	font-weight: 400;
+	display: none; // hide on smaller screens
+	
+	@include media-breakpoint-up(sm) {
+		display: block;
+	}
 
 	img {
 		display: inline-block;
@@ -127,17 +142,69 @@ ol.comment-list {
 	top: -2px;
 	margin-right: 2px;
 }
+ 
+.cld-like-dislike-wrap .cld-common-wrap {
+	position: relative;
+	min-width: 30px;
+	text-align: center;
+	margin: 0 5px;
+
+	@include media-breakpoint-up(md) {
+		margin: 0 10px;
+	}
+}
+
+.cld-like-dislike-trigger {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 100%;
+
+	&::before,
+	&.cld-prevent:hover::before {
+		transition: transform $transition-time ease-in-out;
+		content: "";
+		transform: scale(0);
+		border-radius: 100%;
+		width: 30px;
+		height: 30px;
+		background-color: $white;
+		position: absolute;
+		z-index: -1;
+	}
+
+	&:hover::before {
+		transform: scale(1);
+	}
+}
+
+.cld-like-dislike-trigger i {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+
+	&::before {
+		z-index: 3;
+	}
+}
+
 
 .cld-like-dislike-wrap {
 	font-size: 20px;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	width: 200px;
-	margin-left: -100px;
+	width: 100px;
+	margin-left: -50px;
 	
 	@include media-breakpoint-up(md) {
 		bottom: 40px;
+		width: 150px; 
+		margin-left: -75px;
 	}
 }
 
@@ -149,4 +216,13 @@ ol.comment-list {
 
 .cld-count-wrap {
 	color: $gray-light;
+	font-size: 12px;
+	position: absolute;
+	left: 50%;
+	width: 20px;
+	border-radius: 100%;
+	font-weight: 700;
+	margin-left: -10px;
+	text-align: center;
+	bottom: -19px;
 }

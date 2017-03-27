@@ -1,15 +1,27 @@
-.navbar {
+.navbar,
+#reply-title {
 	height: $navbar-height;
 	line-height: $navbar-height;
 	padding: 0;
 	background-color: $body-bg;
-	flex-direction: row;	
-	border-top: 3px solid $brand-primary;
+	flex-direction: row;
+	background-color: $white;
 
 	@include media-breakpoint-up(lg) {
-		height: $navbar-height + 50;
-		line-height: $navbar-height + 50;
+		position: fixed;
+		background-color: $white;
+		width: $navbar-width;
+		line-height: 1;
+		height: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
+
 
 	&::after {
 		content: "";
@@ -23,15 +35,53 @@
 	}
 }
 
-.navbar-brand,
 #reply-title {
-	font-size: 30px;
+	@include media-breakpoint-up(lg) {
+		position: fixed;
+		background-color: $white;
+		width: $navbar-width;
+		line-height: 1;
+		height: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		z-index: $zindex-tooltip + 1;
+	}
+}
+
+.navbar-brand {
+	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0;
-	position: relative;
-	font-weight: 300;
+}
+
+.navbar-brand,
+#reply-title {
+	font-size: 30px;
+	font-weight: 700;
 	z-index: 2;
+	color: $gray;
+
+	@include media-breakpoint-up(md) {
+		font-size: 35px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 40px;
+		width: $navbar-width;
+		padding: 10px;
+		white-space: normal;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 45px;
+	}
+
 
 	&::before,
 	&::after {
@@ -48,20 +98,20 @@
 	    line-height: 1;
 	    left: 50%;
 	    color: $gray-light;
-	    margin-left: -71px;
+	    margin-left: -77px;
     
 
 	    @include media-breakpoint-up(md) {
-			margin-left: -83px;
+			margin-left: -89px;
 	    }
 
 	    @include media-breakpoint-up(lg) {
-	    	margin-left: -93px;
+	    	margin-left: -102px;
 	    	top: 48px;
 	    }
 
 	    @include media-breakpoint-up(xl) {
-	    	margin-left: -104px;
+	    	margin-left: -114px;
 	    }
 
 	    // When page-ready
@@ -84,34 +134,24 @@
 		animation: bulb-flicker 3s linear forwards;
 		animation-delay: 5s;
 		box-shadow: 0 0 15px rgba(255,213,0,0.75);
-		margin-left: -70px;
+		margin-left: -76px;
 		
 
 	    @include media-breakpoint-up(md) {
-	    	margin-left: -82px;
+	    	margin-left: -88px;
 	    }
 
 	    @include media-breakpoint-up(lg) {
-	    	margin-left: -92px;
+	    	margin-left: -101px;
 	    	top: 49px;
 	    }
 
 	    @include media-breakpoint-up(xl) {
-	    	margin-left: -103px;
+	    	margin-left: -112px;
 	    }
 	}
 
-	@include media-breakpoint-up(md) {
-		font-size: 35px;
-	}
 
-	@include media-breakpoint-up(lg) {
-		font-size: 40px;
-	}
-
-	@include media-breakpoint-up(xl) {
-		font-size: 45px;
-	}
 }
 
 
@@ -174,6 +214,7 @@
 	left: 0;
 	top: 0;
 	height: $navbar-height;
+	z-index: 5;
 }
 
 

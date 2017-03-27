@@ -18,16 +18,16 @@ if (post_password_required()) {
     ?>
     </ol>
 
-    <button class="btn quote-form-open-close add-quote__open--lg" data-toggle="tooltip" data-placement="left" title="Add your suggestion" data-animation="false"><span class="sr-only">Add your suggestion</span> <span class="fa fa-plus"></span></button>
+    <button class="btn quote-form-open-close add-quote__open--lg" data-toggle="tooltip" data-placement="right" title="Add your suggestion" data-animation="false"><span class="sr-only">Add your suggestion</span> <span class="fa fa-plus"></span></button>
 
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
       <nav class="pager-wrap row">
         <ul class="pager">
           <?php if (get_previous_comments_link()) : ?>
-            <li  data-toggle="tooltip" data-placement="top" title="Load prev page" data-animation="false" class="prev"><?php previous_comments_link(__('<i class="fa fa-angle-left"></i>', 'sage')); ?></li>
+            <li  data-toggle="tooltip" data-placement="top" title="Prev page" data-animation="false" class="prev"><?php previous_comments_link(__('<i class="fa fa-angle-left"></i>', 'sage')); ?></li>
           <?php endif; ?>
           <?php if (get_next_comments_link()) : ?>
-            <li  data-toggle="tooltip" data-placement="top" title="Load next page" data-animation="false" class="next"><?php next_comments_link(__('<i class="fa fa-angle-right"></i>', 'sage')); ?></li>
+            <li  data-toggle="tooltip" data-placement="top" title="Next page" data-animation="false" class="next"><?php next_comments_link(__('<i class="fa fa-angle-right"></i>', 'sage')); ?></li>
           <?php endif; ?>
         </ul>
       </nav>

@@ -1,7 +1,9 @@
  <!--SUGGESTION-->
   <h2 class="suggestion-text">
     <blockquote>
-    <?php comment_text(); ?>
+    
+	    	<?php comment_text(); ?>
+
     </blockquote>
   </h2>
   <!--/SUGGESTION--> 
@@ -10,11 +12,13 @@
     <?php if ( $comment->comment_approved == '0' ) : ?>
     <div class="suggestion-moderation">
       <p class="suggestion-awaiting-moderation">
-        <?php _e( 'Thank you for your suggestion! It is awaiting approval.'); ?>
+        <?php _e( 'Thank you for your suggestion!<br /> It is awaiting approval.'); ?>
       </p>
     </div>
     <?php endif; ?>
     <!-- / AWAITING APPROVAL -->
+
+    
 
   <!--SUGGESTION CONTRIBUTOR-->
     <div class="suggestion-contributor-wrap vcard">
@@ -31,7 +35,7 @@
       	</div>
 
       	<div class="suggestion-meta">
-	      <span class="suggestion-date"><i class="fa fa-calendar"></i><?php $d = "l, F jS, Y";
+	      <span class="suggestion-date"><i class="fa fa-calendar"></i><?php $d = "D, M jS, Y";
 	      $comment_date = get_comment_date( $d, $comment_ID );
 	      echo $comment_date; ?></span>
 
@@ -52,5 +56,7 @@
                 
     </div>
     <!--/SUGGESTION CONTRIBUTOR-->
+
+
 
     

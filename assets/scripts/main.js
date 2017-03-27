@@ -25,6 +25,9 @@
           typekit: {
             id: "gxm2nom"
           },
+          custom: {
+            families: ['Baron Neue']
+          },
           active: function () {
               
             // FIRE FUNCTIONS AFTER FONT HAS LOADED

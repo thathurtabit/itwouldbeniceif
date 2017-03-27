@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Baron Neue';
+    src: url('../fonts/baron_neue-webfont.eot');
+    src: url('../fonts/baron_neue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/baron_neue-webfont.woff2') format('woff2'),
+         url('../fonts/baron_neue-webfont.woff') format('woff'),
+         url('../fonts/baron_neue-webfont.ttf') format('truetype'),
+         url('../fonts/baron_neue-webfont.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
@@ -254,7 +268,7 @@ $grid-gutter-widths: (
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif: 'Europa', 'Quicksand', "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-sans-serif-alt: 'Europa', 'Open Sans', "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif-alt: 'Baron Neue', 'Open Sans', "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
@@ -554,7 +568,8 @@ $zindex-tooltip:            1070 !default;
 
 // Navbar
 
-$navbar-height:						100px;
+$navbar-height:						   100px;
+$navbar-width:               250px;
 $navbar-border-radius:              $border-radius !default;
 $navbar-padding-x:                  $spacer !default;
 $navbar-padding-y:                  ($spacer / 2) !default;

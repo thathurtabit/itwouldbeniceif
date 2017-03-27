@@ -10,7 +10,7 @@
 	text-align: center;
 	z-index: $zindex-tooltip;
 	background-color: $brand-primary;
-	color: $body-bg;
+	color: $white;
 	border-radius: 100%;
 	padding: 0;
 	font-weight: 300;
@@ -26,7 +26,8 @@
 
 	@include media-breakpoint-up(lg) {
 		top: 55px;
-		right: 50px;
+		//right: 50px;
+		left: 103px;
 	}
 
 	&:hover {
@@ -51,10 +52,4 @@
   100% {
       box-shadow: 0 0 0 0 rgba(104,56,174, 0);
   }
-}
-
-
-.add-quote__close {
-	background-color: $body-bg; 
-	color: $brand-primary;
 }
