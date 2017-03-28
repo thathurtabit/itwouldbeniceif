@@ -26,7 +26,7 @@ foreach($comments as $comment) : ?>
 ?>
 <div class="alert alert-info row">
   <p><strong>Thank you</strong> for trying to improve the world!</p>
-  <p>Share this: <i class="fa fa-link"></i> <a href="<?php echo add_query_arg( $params, site_url( '/s')); ?>" class="alert-link" title="Share this suggestion"><?php echo add_query_arg( $params, site_url( '/s')); ?></a></p>
+  <p>Share this: <i class="fa fa-link"></i> <a href="<?php echo add_query_arg( $params, site_url( '/s')); ?>" class="alert-link btn-slide" title="Share this suggestion"><?php echo add_query_arg( $params, site_url( '/s')); ?></a></p>
 </div>
     
 <div class="suggestion">

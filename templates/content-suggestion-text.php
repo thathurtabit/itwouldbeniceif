@@ -22,8 +22,10 @@
 
   <!--SUGGESTION CONTRIBUTOR-->
     <div class="suggestion-contributor-wrap vcard">
-		<div class="suggestion-contributor">
-			<span class="added-by">Added by:</span>
+		<div class="suggestion-contributor"  data-animation="false" data-toggle="tooltip" data-placement="top" title="<?php $d = "D, M jS, Y";
+	      $comment_date = get_comment_date( $d, $comment_ID );
+	      echo $comment_date; ?>">
+			<!-- <span class="added-by">Added by:</span> -->
 	       <?php echo get_avatar( $comment, 12 ); ?> 
 	      <?php if(!get_comment_author_url()) : ?>
 	      <?php comment_author(); ?>
@@ -35,11 +37,7 @@
       	</div>
 
       	<div class="suggestion-meta">
-	      <span class="suggestion-date"><i class="fa fa-calendar"></i><?php $d = "D, M jS, Y";
-	      $comment_date = get_comment_date( $d, $comment_ID );
-	      echo $comment_date; ?></span>
-
-
+	      
 	      <?php
 	        // Set params for generating link
 	        $my_comment_id = get_comment_ID();
@@ -47,7 +45,7 @@
 	      ?>
 	      <div class="suggestion-link">
 	      	<span class="fa fa-link"></span> 
-	      	<a href="<?php echo add_query_arg( $params, site_url( '/s')); ?>" title="Link to this suggestion"><?php echo add_query_arg( $params, site_url( '/s')); ?></a>
+	      	<a href="<?php echo add_query_arg( $params, site_url( '/s')); ?>" title="Link to this suggestion" class="btn-slide"><?php echo add_query_arg( $params, site_url( '/s')); ?></a>
 	      </div>
 
 	      

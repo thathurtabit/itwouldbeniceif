@@ -17,14 +17,14 @@
   font-size: 25px;
   margin-right: 15px;
   margin-left: 15px;
-  color: $brand-primary;
+  color: darken($brand-primary, 10%);
   background-color: $body-bg;
   border: 0;
   outline: none;
 
 	&:hover {
 		cursor: pointer;
-		background-color: lighten($brand-primary, 10%);
+		background-color: darken($yellow, 10%);
 	}
 }
 
@@ -111,11 +111,11 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 	font-size: 7vw;
 
 	@include media-breakpoint-up(sm) {
-		font-size: 6vw;	
+		font-size: 5vw;	
 	}
 
 	@include media-breakpoint-up(md) {
-		font-size: 5vw;	
+		font-size: 4vw;	
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -123,7 +123,7 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 	}
 
 	@include media-breakpoint-up(xl) {
-		font-size: 3vw;
+		font-size: 2.75vw;
 	}
 }
 
@@ -170,16 +170,41 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 	left: 30px;
 }
 
+// Transition form items
+#comment-wrap h4,
 #comment-wrap,
 .comment-form,
 .form-submit {
+	transition: opacity $transition-time ease-in-out, transform $transition-time ease-in-out;
+	opacity: 0;
+	transform: translate(0,10px) scale(1.2);
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+
     @include media-breakpoint-up(lg) {
     	width: 100%;
     	max-width: 800px;
     }
+
+    #respond.open & {
+		opacity: 1;
+		transform: translate(0,0) scale(1);
+    }
+}
+
+// Stagger delay
+#comment-wrap h4 {
+	transition-delay: $transition-time;
+}
+#comment-wrap {
+	transition-delay: $transition-time + 0.1;
+}
+.comment-form {
+	transition-delay: $transition-time + 0.2;
+}
+.form-submit {
+	transition-delay: $transition-time + 0.3;
 }
 
 #comment-wrap {
@@ -188,13 +213,59 @@ input[type=email], input[type=text], input[type=url], textarea, .form-control, .
 	h4 {
 		display: block;
 		width: 100%;
+		position: relative;
+
+		// Only on larger screens
+		@include media-breakpoint-up(lg) {
+			&::before {
+				content: $fa-var-lightbulb-o;
+				font-family: FontAwesome;
+				transition: opacity $transition-time * 3 ease-in-out, transform $transition-time * 3 ease-in-out;
+				transition-delay: $transition-time + 0.2;
+				opacity: 0;
+				transform: translate(0, 0);
+				color: darken($brand-primary, 10%);
+				position: absolute;
+				top: -50px;
+				left: 50%;
+				margin-left: -6px;
+				z-index: 2;
+
+				#respond.open & {
+					opacity: 1;
+					transform: translate(0, -10px);
+				}
+			}
+
+			&::after {
+				content: "";
+				background-color: $yellow;
+				transition: opacity $transition-time * 3 ease-in-out, box-shadow $transition-time * 3 ease-in-out;
+				transition-delay: $transition-time + 1;
+				opacity: 0;
+				position: absolute;
+				width: 12px;
+				height: 10px;
+				border-radius: 30px;
+				top: -55px;
+				left: 50%;
+				margin-left: -6px;
+				z-index: 1;
+				box-shadow: 0 3px 0 0 $body-bg;
+
+				#respond.open & {
+					opacity: 1;
+					box-shadow: 0 3px 0 20px $body-bg;
+				}
+			}
+		}
 	}
 
 	#maxlength-p {
 		position: absolute;
-		bottom: 10px;
+		bottom: 20px;
 		left: 50%;
-		background-color: $input-bg;
+		background-color: rgba(255,255,255,0.5);
 		color: lighten($body-color, 20%);
 		width: 130px;
 	    text-align: center;

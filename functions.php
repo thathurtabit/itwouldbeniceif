@@ -149,7 +149,7 @@ add_filter( 'query_vars', 'add_custom_query_var');
       'id_form' => 'form-comment',
       'class_form' => 'comment-form-wrap',
       'id_submit' => 'submit',
-      'title_reply' => '<div class="navbar-brand">It would be nice if...</div>',
+      'title_reply' => '<div class="navbar-brand"><span class="brand-bg"></span>It would be nice if...</div>',
       'label_submit' => __( 'Add' ),
     );
 

@@ -50,32 +50,43 @@
 }
 
 .navbar-brand {
-	font-size: 30px;
+	transition: opacity $transition-time ease-in-out, transform $transition-time ease-in-out, background-color $transition-time ease-in-out;
+	opacity: 0;
+	transform: scale(1.1);
+	font-size: 20px;
 	font-weight: 700;
 	z-index: 2;
-	color: $gray;
+	font-family: $font-family-sans-serif-alt;
+	color: $brand-primary;
+
+	.page-ready & {
+		opacity: 1;
+		transform: scale(1);
+	}
 
 	@include media-breakpoint-up(md) {
-		font-size: 35px;
+		font-size: 25px;
 	}
 
 	@include media-breakpoint-up(lg) {
-		font-size: 40px;
+		font-size: 30px;
 		padding: 10px;
 		padding-left: 35px;
 		padding-right: 35px;
 		white-space: normal;
+		border-radius: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: $navbar-width - 60;
+		width: $navbar-width - 60;
 	}
-
-	@include media-breakpoint-up(xl) {
-		font-size: 45px;
-	}
-
 
 	&::before,
 	&::after {
-		transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-		transition-delay: 1.5s;
+		transition: opacity $transition-time * 2 ease-in-out, transform $transition-time * 2 ease-in-out;
+		transition-delay: $transition-time * 4;
 		opacity: 0;
 		transform: translate3d(0, 10px, 0);
 		font-family: "FontAwesome";
@@ -87,21 +98,19 @@
 	    line-height: 1;
 	    left: 50%;
 	    color: $gray-light;
-	    margin-left: -77px;
+	    margin-left: -60px;
     
 
 	    @include media-breakpoint-up(md) {
-			margin-left: -89px;
+			margin-left: -74px;
 	    }
 
 	    @include media-breakpoint-up(lg) {
-	    	margin-left: -102px;
-	    	top: 48px;
+	    	margin-left: -4px;
+	    	top: -8px;
 	    }
 
-	    @include media-breakpoint-up(xl) {
-	    	margin-left: -114px;
-	    }
+
 
 	    // When page-ready
 	    .page-ready & {
@@ -123,25 +132,50 @@
 		animation: bulb-flicker 3s linear forwards;
 		animation-delay: 5s;
 		box-shadow: 0 0 15px rgba(255,213,0,0.75);
-		margin-left: -76px;
+		margin-left: -59px;
 		
 
 	    @include media-breakpoint-up(md) {
-	    	margin-left: -88px;
+	    	margin-left: -73px;
 	    }
 
 	    @include media-breakpoint-up(lg) {
-	    	margin-left: -101px;
-	    	top: 49px;
+	    	margin-left: -3px;
+	    	top: -6px;
 	    }
 
-	    @include media-breakpoint-up(xl) {
-	    	margin-left: -112px;
-	    }
 	}
-
-
 }
+
+
+
+// navbar-brand bg
+
+.navbar-brand .brand-bg {
+	transition: opacity $transition-time * 2 ease-in-out, transform $transition-time * 2 ease-in-out;
+	transition-delay: $transition-time + 1;
+	content: "";
+	width: 20px;
+	height:  20px;
+	position: absolute;
+	opacity: 0;
+	transform: scale(0);
+	transform-origin: 50% 50%;
+	top: -9px;
+	left: 50%;
+	z-index: -1;
+	margin-left: -10px;
+	border-radius: 100%;
+	background-color: $white;
+}
+
+.navbar-brand .brand-bg {
+	.page-ready & {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
 
 
 // Animation keyframes
