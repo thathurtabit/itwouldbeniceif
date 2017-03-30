@@ -43,7 +43,9 @@ ol.comment-list {
 	opacity: 0;
 	position: relative;
 
-	.slick-active & {
+	.slick-active &,
+	.page-ready.page-template-template-custom &,
+	.page-template-template-thank-you &  {
 		opacity: 1;
 	}
 }
@@ -122,10 +124,35 @@ ol.comment-list {
 		font-weight: 400;
 		position: absolute;
 		bottom: 40px;
+		left: 0;
+		text-align: left;
+		padding: 10px;
+
+
+		// Animated bg
+		&::after {
+			content: "";
+			transition: width $transition-time * 3 ease-in-out;
+			transition-delay: $transition-time * 2;
+			width: 0;
+			background-color: rgba(0,0,0,0.05);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+
+			.slick-active &,
+			.page-ready.page-template-template-custom &,
+			.page-template-template-thank-you & {
+				width: 100%;
+			}	
+		}
 
 		// Animated border
 		&::before {
-			transition: left $transition-time ease-in-out, width $transition-time ease-in-out;
+			transition: width $transition-time ease-in-out;
 			transition-delay: $transition-time * 3;
 			content: "";
 			position: absolute;
@@ -133,13 +160,12 @@ ol.comment-list {
 			width: 0;
 			height: 0;
 			top: -20px;
-			left: 100%;
+			left: 0;
 
 			.slick-active &,
 			.page-ready.page-template-template-custom &,
 			.page-template-template-thank-you & {
 				width: 30%;
-				left: 33.33%;
 			}	
 		}
 
@@ -162,7 +188,7 @@ ol.comment-list {
 .suggestion-link {
 	transition: transform $transition-time ease-in-out, opacity $transition-time ease-in-out;
 	opacity: 0;
-	transform: scale(1.2);
+	transform: translate(-10px,0);
 	display: block;
 	padding-bottom: 2px;
 
@@ -170,13 +196,15 @@ ol.comment-list {
 	.page-ready.page-template-template-custom &,
 	.page-template-template-thank-you & {
 		opacity: 1;
-		transform: scale(1);
+		transform: translate(0,0);
 	}
 }
 
 // Staggered delay
 .suggestion-contributor {
 	transition-delay: $transition-time * 4;
+	display: inline-block;
+	cursor: help;
 }
 
 

@@ -30,9 +30,9 @@ foreach($comments as $comment) : ?>
 </div>
     
 <div class="suggestion">
-
+<div class="suggestion-inner">
   <?php get_template_part('templates/content', 'suggestion-text'); ?>
-
+</div>
 </div>
 
 <?php endforeach;

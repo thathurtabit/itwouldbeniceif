@@ -32,7 +32,7 @@ $comment = get_comment( intval( $q ) );
 ?>
 
 <div class="suggestion">
-
-<?php get_template_part('templates/content', 'suggestion-text'); ?>
-
+	<div class="suggestion-inner">
+		<?php get_template_part('templates/content', 'suggestion-text'); ?>
+	</div>
 </div>
